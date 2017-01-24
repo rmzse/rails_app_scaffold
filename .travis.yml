@@ -16,7 +16,7 @@ deploy:
   api_key:
     secure:
   app:
-      master: #my_app
+      develop: #my_app
     on:
       repo: rmzse/rails_app_scaffold
     run:
