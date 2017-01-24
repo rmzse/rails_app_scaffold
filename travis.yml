@@ -1,9 +1,23 @@
 language: ruby
+notifications:
+  email: false
 cache: bundler
 rvm:
   - 2.3.1p112
-script: bundle exec rspec spec
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rake ci:tests
+services:
+  - postgresql
 deploy:
   provider:
   api_key:
     secure:
+  app:
+      develop: #homechefs
+    on:
+      repo: #CraftAcademy/homechef
+    run:
+      - bundle exec rake db:migrate
