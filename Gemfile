@@ -44,7 +44,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'travis', '~> 1.8', '>= 1.8.2'
-	gem 'coveralls'
+	gem 'coveralls', require: false
 end
 
 group :development do
