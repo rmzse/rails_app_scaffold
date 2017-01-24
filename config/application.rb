@@ -29,7 +29,7 @@ module RailsAppScaffold
       generate.view_specs false
       generate.helper_specs false
       generate.routing_specs false
-      generate.controller_specs false   
+      generate.controller_specs false
     end
   end
 end
