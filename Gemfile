@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem 'rake'
-gem 'rack'
+# gem 'rack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'travis', '~> 1.8', '>= 1.8.2'
 end
 
 group :development do
