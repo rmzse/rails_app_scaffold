@@ -231,8 +231,8 @@ DEPENDENCIES
   pry
   pry-byebug
   puma (~> 3.0)
+  rack
   rails (~> 5.0.1)
-  rake
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
