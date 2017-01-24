@@ -18,6 +18,6 @@ deploy:
   app:
       develop: #my_app
     on:
-      repo: rmzse/rails_app_scaffold
+      repo: rmzse/rails_app_scaffold   
     run:
       - bundle exec rake db:migrate
