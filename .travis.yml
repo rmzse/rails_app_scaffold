@@ -12,12 +12,12 @@ script:
 services:
   - postgresql
 deploy:
-  provider:
+  provider: #heroku
   api_key:
     secure:
   app:
-      develop: #homechefs
+      develop: #my_app
     on:
-      repo: #CraftAcademy/homechef
+      repo: rmzse/rails_app_scaffold
     run:
       - bundle exec rake db:migrate
