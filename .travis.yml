@@ -1,23 +1,19 @@
 language: ruby
-notifications:
-  email: false
 cache: bundler
 rvm:
-  - 2.2.2
+  - 2.3.1
 before_script:
-  - bundle exec rake db:create --all
-  - bundle exec rake db:migrate
-script:
-  - bundle exec rake ci:tests
+- bundle exec rails db:create --all
+- bundle exec rails db:migrate
 services:
-  - postgresql
+- postgresql
 deploy:
-  provider: #heroku
+  provider: heroku
   api_key:
-    secure:
+    secure: llewJnTTyY71tZo4n20xXUFzDRQpAZtdDURG+qxErP089pMAivTWBL0pGP+2r19mWLfJPdXkPNTQT5i4//huVW2BbAedPstgGPH1xT2CesLDKPq49QXqkSauvp/odA+HwyAJT3jQp9dEa+ScGkrVaJJB530QxssdDSqGW5fjTpmP0nyIsFDgHopY3BZaLnI2F7NCZwItCr+LOWLuwskfh+sH9Rx8FBEN1T7bTfUL3FlkY7IRpV7KlBoiVt0zBiIz+95kIsifGkh/jB329tlEESxggC94dHn1Hp14xIRNG70vTrc2wvN3R4Bou2eU07nZXOGL905zfIWYWF8MipX5Kd8lEKMXCQH4yRdrtglN81xzOf2tnYUKnYBUhXuWkzZGkTy63vltdUCi5DVtZrouduf6QSgOpcZUc+2/s2xKvEAIyt1laVRm1L1Z7dlzANkC02/woMO9Sxu3OwoL2iSHMKM8Wpdt0dlk/XA5zDQQ7XJ6cYGSUhQhvLsWrsqWHEIcbYsNBs45REHspzrtq+nyTOV+wG+ma/SroLmji8dgaDVCMa6CCISXaKvonWvybwAsB0d61MkAAL3PlrGheXmrmHAv7jq0SmdE5GOqfJdCllBhCkvd08Ddj7R8iUkgChZ8UArVrdfK7h7xH1BHK41dNI6QJuT/TrCXsqdw3nk/Pdk=
   app:
-      develop: #my_app
-    on:
-      repo: rmzse/rails_app_scaffold
-    run:
-      - bundle exec rake db:migrate
+    develop: rails-robo-scaffold
+  on:
+    repo: rmzse/rails_app_scaffold
+  run:
+  - bundle exec rails db:migrate
